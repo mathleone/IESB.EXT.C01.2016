@@ -19,7 +19,7 @@ int isFull(struct Fila *f){
 }
 int enqueue(struct Fila *f, int elemento){
 	if(isFull(f)) return 0;
-	f->elementos[(f->final + 1) % f->tamanho] = elemento;
+	f->elementos[f->final % f->tamanho] = elemento;
 	f->final = (f->final + 1) % f->tamanho;
 	return 1;
 }
